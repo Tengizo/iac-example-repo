@@ -1,0 +1,27 @@
+filters:
+  - label: feat
+    events: [pull_request]
+    targets: [title]
+    regexs:
+      - /\bfeat\b/
+      - /feature/i
+  - label: fix
+    events: [pull_request]
+    targets: [title]
+    regexs:
+      - /fix|bug/
+  - label: docs
+    events: [pull_request]
+    targets: [title]
+    regexs:
+      - /documentation|docs/
+  - label: chore
+    events: [ pull_request ]
+    targets: [ title ]
+    regexs:
+      - /chore|refactor|refactoring/
+  - label: build
+    events: [ pull_request ]
+    targets: [ title ]
+    regexs:
+      - /build/
