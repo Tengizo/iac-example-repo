@@ -16,7 +16,7 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
       - name: Clone Central Repository
-        run: git clone https://github.com/Tengizo/release-central.git release-central
+        run: git clone https://github.com/Tengizo/release-notes-center.git release-central
 
       - name: Fetch Release Notes
         run: |
@@ -46,10 +46,10 @@ jobs:
         uses: cpina/github-action-push-to-another-repository@main
         with:
           source-directory: ${{ env.SOURCE_DIR }}
-          destination-github-username: 'Tengizo'
-          destination-repository-name: 'release-central'
+          destination-github-username: '[GH_USERNAME]'
+          destination-repository-name: '[RELEASE_NOTES_REPO]'
           target-directory: ${{ env.TARGET_DIR }}
-          user-email: chtengo@gmail.com
+          user-email: [GH_EMAIL]
           target-branch: master
           commit-message:  Add release notes ${{ github.event.release.tag_name }} for ${{ github.repository }}
         env:
